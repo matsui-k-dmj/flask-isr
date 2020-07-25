@@ -1,0 +1,27 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.122.1/containers/debian-10-git
+{
+  "name": "flask-isr",
+  "dockerFile": "Dockerfile",
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "ms-python.python",
+    "ms-azuretools.vscode-docker",
+    "njpwerner.autodocstring",
+    "mhutchie.git-graph",
+    "ms-python.vscode-pylance",
+    "christian-kohler.path-intellisense",
+    "samuelcolvin.jinjahtml",
+    "wyattferguson.jinja2-snippet-kit"
+  ],
+  "runArgs": [
+    "--gpus=all",
+    "--memory=32g",
+    "--memory-swappiness=0",
+    "-p=5000:5000"
+  ]
+}

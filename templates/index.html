@@ -1,4 +1,41 @@
 {% extends 'layout.html' %}
 {% block content %}
-Hello World!
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="input-field" style="margin-top: 2rem;">
+
+                    <select name="algo">
+                        <option value="" disabled selected>アルゴリズムを選択してください</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <label>アルゴリズム</label>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                    <input type="file" name="image" accept="image/png, image/jpeg">
+                </div>
+
+                <div style="margin-top: 1rem;">
+                    <button class="btn waves-effect waves-light" type="submit">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    M.AutoInit();
+</script>
+
+
 {% endblock content %}

@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_file
+import model
+import io
 
 app = Flask(__name__)
 
@@ -12,7 +14,13 @@ def index():
 def upload():
     print(request.form)
     print(request.files)
-    return redirect('/')
+    buf = model.super_resolution(
+        bytearray(request.files["image"].stream.read()))
+
+    return send_file(io.BytesIO(buf),
+                     mimetype='image/png',
+                     as_attachment=True,
+                     attachment_filename='tmp.png')
 
 
 if __name__ == "__main__":

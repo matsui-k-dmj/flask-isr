@@ -3,6 +3,7 @@ import model
 import io
 import numpy as np
 import cv2
+import os
 
 app = Flask(__name__)
 
@@ -23,10 +24,13 @@ def upload():
 
     retval, buf = cv2.imencode('.png', img)
 
-    return send_file(io.BytesIO(buf),
-                     mimetype='image/png',
-                     as_attachment=True,
-                     attachment_filename='tmp.png')
+    return send_file(
+        io.BytesIO(buf),
+        mimetype='image/png',
+        as_attachment=True,
+        attachment_filename=
+        f'{os.path.splitext(request.files["image"].filename)[0]}_{request.form["algo"]}.png'
+    )
 
 
 def bytes2image(buf: bytes) -> np.ndarray:

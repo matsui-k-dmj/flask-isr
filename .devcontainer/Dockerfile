@@ -7,4 +7,5 @@ RUN apt update && \
 
 RUN python -m pip install -U pip && \
     python -m pip install flask \
-    opencv-python
+    opencv-python \
+    yapf mypy pylint

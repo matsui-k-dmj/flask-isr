@@ -5,28 +5,32 @@
         <div class="col s12">
 
             <form action="/upload" method="POST" enctype="multipart/form-data">
-                <div class="input-field" style="margin-top: 2rem;">
+                <div class="row">
 
-                    <select name="algo">
-                        <option value="" disabled selected>アルゴリズムを選択してください</option>
-                        <option value="noise-cancel">noise-cancel</option>
-                        <option value="psnr-small">psnr-small</option>
-                        <option value="psnr-large">psnr-large</option>
-                        <option value="gans">gans</option>
-                    </select>
-                    <label>アルゴリズム</label>
+                    <div class="input-field col s6" style="margin-top: 2rem;">
+
+                        <select name="algo">
+                            <option value="" disabled selected>アルゴリズムを選択してください</option>
+                            <option value="noise-cancel">noise-cancel</option>
+                            <option value="psnr-small">psnr-small</option>
+                            <option value="psnr-large">psnr-large</option>
+                            <option value="gans">gans</option>
+                        </select>
+                        <label>アルゴリズム</label>
+                    </div>
                 </div>
 
-                <div style="margin-top: 1rem;">
-                    <input type="file" name="image" accept="image/png, image/jpeg">
-                </div>
+                <div class="row">
+                    <div style="margin-top: 1rem;">
+                        <input type="file" name="image" accept="image/png, image/jpeg">
+                    </div>
 
-                <div style="margin-top: 1rem;">
-                    <button class="btn waves-effect waves-light" type="submit">Submit
-                        <i class="material-icons right">send</i>
-                    </button>
+                    <div style="margin-top: 1rem;">
+                        <button class="btn waves-effect waves-light" type="submit">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
                 </div>
-
             </form>
 
         </div>

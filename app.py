@@ -18,7 +18,8 @@ def upload():
     print(request.files)
 
     img = model.super_resolution(
-        bytes2image(request.files["image"].stream.read()))
+        bytes2image(request.files["image"].stream.read()),
+        request.form['algo'])
 
     retval, buf = cv2.imencode('.png', img)
 

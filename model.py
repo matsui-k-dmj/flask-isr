@@ -3,11 +3,15 @@ import cv2
 from ISR.models import RDN, RRDN
 
 
-def super_resolution(image_binary: bytearray):
-    image_array = cv2.imdecode(np.array(image_binary, dtype=np.uint8), 1)
+def super_resolution(img: np.ndarray) -> np.ndarray:
+    """[summary]
 
-    cv2.imwrite('tmp.png', image_array)
+    Args:
+        img (np.ndarray): 画像の行列, BGR
 
-    retval, buf = cv2.imencode('.png', image_array)
+    Returns:
+        np.ndarray: 画像の行列, BGR
+    """
+    cv2.imwrite('tmp.png', img)
 
-    return buf
+    return img
